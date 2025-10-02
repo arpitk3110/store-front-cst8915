@@ -14,6 +14,9 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      VUE_APP_ORDER_SERVICE_URL=http://order-service-aga4g6a0g5bjaxew.westus-01.azurewebsites.net
+      VUE_APP_PRODUCT_SERVICE_URL=http://product-service-h8gsc5gyeaa9aqaq.westus-01.azurewebsites.net
     permissions:
        id-token: write
        contents: read
